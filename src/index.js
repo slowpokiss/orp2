@@ -1,8 +1,9 @@
 export default function pullOut({ special }) {
-  for (const key in special) {
-    if (!('description' in special[key]) && (Object.prototype.hasOwnProperty.call(special, key))) {
-      special[key].description = 'Описание недоступно';
+  const obj = special;
+  for (const key in obj) {
+    if (!('description' in obj[key]) && (Object.prototype.hasOwnProperty.call(obj, key))) {
+      obj[key].description = 'Описание недоступно';
     }
   }
-  return special;
+  return obj;
 }
